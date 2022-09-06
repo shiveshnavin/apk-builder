@@ -1,0 +1,21 @@
+name: APK Builder
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: 'Target github repo'     
+        required: true
+        default: 'shiveshnavin/instagram-automation-app'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{ github.event.inputs.target_repo }}
+      - name: Build Android App
+        uses: sparkfabrik/android-build-action@v1.2.0
+        with:
+          output-path: output.apk
+          browserstack-upload: false
