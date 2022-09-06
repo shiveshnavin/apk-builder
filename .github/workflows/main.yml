@@ -33,7 +33,7 @@ jobs:
       - name: Get gradle wrapper
         run: gradle wrapper --gradle-version $gradle_wrapper_version
       - name: Build Android App
-        run: sh gradlew build
+        run: sh gradlew assembleDebug
       - name: Save APK
         uses: actions/upload-artifact@v3
         with:
