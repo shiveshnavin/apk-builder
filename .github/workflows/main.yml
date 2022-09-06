@@ -25,7 +25,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build Android App
-        run: ./gradlew build
+        run: sh gradlew build
       - name: Save APK
         uses: actions/upload-artifact@v3
         with:
