@@ -6,6 +6,10 @@ on:
         description: 'Target github repo'     
         required: true
         default: 'shiveshnavin/instagram-automation-app'
+      target_branch:
+        description: 'Target github branch'     
+        required: true
+        default: 'main'
       gradle_wrapper_version:
         description: 'Gradle Wrapper version'     
         required: true
@@ -20,6 +24,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ${{ github.event.inputs.target_repo }}
+          path: ${{ github.event.inputs.target_branch }}
       - name: set up JDK 11
         uses: actions/setup-java@v3
         with:
