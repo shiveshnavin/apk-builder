@@ -15,7 +15,7 @@ android {
 
     signingConfigs {
         release {
-            keyAlias 'semibit'
+            keyAlias 'myKeyAlias'
             keyPassword 'password'
             storePassword 'password'
             storeFile file("${rootDir}/key.jks")
